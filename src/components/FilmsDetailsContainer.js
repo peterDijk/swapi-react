@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { loadFilm, clearFilm } from '../actions/films'
-import { loadFilmCharacter } from '../actions/people'
+import { loadFilmCharacter, clearFilmCharacters } from '../actions/people'
 
 import FilmDetails from './FilmDetails'
 
@@ -24,6 +24,7 @@ class FilmsDetailsContainer extends React.PureComponent {
 
   componentWillUnmount() {
     this.props.clearFilm()
+    this.props.clearFilmCharacters()
   }
 
   render() {
@@ -45,7 +46,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = { 
   loadFilm,
   clearFilm,
-  loadFilmCharacter
+  loadFilmCharacter,
+  clearFilmCharacters
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilmsDetailsContainer)
