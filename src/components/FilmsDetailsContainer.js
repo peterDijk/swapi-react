@@ -14,7 +14,6 @@ class FilmsDetailsContainer extends React.PureComponent {
   componentDidUpdate(prevProps) {
     if (this.props.film && this.props.characters.length <= this.props.film.characters.length) {
       
-      // this.props.film.characters.forEach(char => this.props.loadFilmCharacter(char))
       const char = this.props.film.characters[this.props.characters.length + 1]
       if (char !== undefined) {
         this.props.loadFilmCharacter(char)
