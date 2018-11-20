@@ -14,3 +14,9 @@ export function loadFilmCharacter(url) {
     payload: url
   }
 }
+
+export function clearFilmCharacters() {
+  return {
+    type: types.CLEAR_FILM_CHARACTERS
+  }
+}

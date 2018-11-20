@@ -12,6 +12,8 @@ export default (state = [], { type, payload }) => {
         ...state,
         error: payload
       }
+    case types.CLEAR_FILM_CHARACTERS:
+      return []
     default:
       return state
   }

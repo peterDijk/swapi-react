@@ -140,7 +140,8 @@ body {
   background-color: #282727;
   width: 90vw;
   display: flex;
-  z-index: 50; }
+  z-index: 50;
+  padding: 2rem; }
   .film-info h1 {
     font-size: 3rem; }
   .film-info h2 {
@@ -150,7 +151,11 @@ body {
   .film-info__dry {
     width: 40%; }
   .film-info__related {
-    width: 60%; }
+    width: 60%;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; }
 
 .fade {
   position: relative;
