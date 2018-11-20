@@ -45,6 +45,11 @@ body {
     color: #858A8D; }
     .header__nav h3 {
       font-size: 1.6rem; }
+    .header__nav-link:link, .header__nav-link:visited {
+      text-decoration: none;
+      color: #858A8D; }
+    .header__nav-link:hover {
+      border-bottom: 0.1rem solid #858A8D; }
 
 .item-box {
   background-color: rgba(133, 138, 141, 0.8);
@@ -58,6 +63,18 @@ body {
   margin-bottom: 5rem;
   margin-top: 0;
   float: left;
+  transition: all .1s; }
+
+.item-row {
+  background-color: rgba(133, 138, 141, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: .3rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+  height: 10rem;
+  margin-bottom: 5rem;
+  margin-top: 0;
   transition: all .1s; }
 
 .loader {
@@ -91,6 +108,15 @@ body {
   margin: 3rem;
   padding: 2rem;
   display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+.section-people {
+  margin: 3rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap; }

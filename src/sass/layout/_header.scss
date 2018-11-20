@@ -23,6 +23,18 @@
     h3 {
       font-size: 1.6rem;
     }
+
+    &-link {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: $color-light-grey;
+      }
+      &:hover {
+        border-bottom: .1rem solid $color-light-grey;
+      }
+
+    }
   }
 
 }
