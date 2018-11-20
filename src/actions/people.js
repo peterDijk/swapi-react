@@ -6,3 +6,11 @@ export function loadPeople(query) {
     payload: query
   }
 }
+
+export function loadFilmCharacter(url) {
+  console.log(url)
+  return {
+    type: types.LOAD_FILM_CHARACTER_REQUEST,
+    payload: url
+  }
+}
