@@ -6,6 +6,12 @@
   box-sizing: inherit;
 }
 
+*:link,
+*:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 html {
   // This defines what 1rem is. 100% is 16px (most of the time).
   font-size: 62.5%; // 10px
