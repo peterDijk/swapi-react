@@ -7,7 +7,7 @@ import People from './People'
 
 class PeopleContainer extends React.PureComponent {
 
-  componentDidMount() {
+  componentWillMount() {
     this.loadPagPeople()
   }
 

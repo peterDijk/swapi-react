@@ -5,6 +5,7 @@ const initialState = {
   count: null,
   next: null,
   previous: null,
+  range: null,
   results: [],
   error: null
 }
@@ -24,13 +25,26 @@ export default (state = initialState, { type, payload }) => {
     case types.ALL_PEOPLE_SUCCESS:
       const { count, next, previous, results } = payload
 
+      const newNext = next && parseInt(next.split("=").slice(-1)[0])
+      const newPrevious = previous && parseInt(previous.split("=").slice(-1)[0])
+      const take = 10
+      const curPage = newNext ? newNext - 1 : newPrevious + 1
+      const skip = (curPage - 1) * take
+      const range = {
+        first: skip + 1,
+        last: (skip + take > count) ? count : skip + take
+      }
+
+
       return { 
         ...state,
         loading: false,
         count,
-        next: next && next.split("/").slice(-1)[0],
-        previous: previous && previous.split("/").slice(-1)[0],
-        results
+        next: newNext && `?page=${newNext}`,
+        previous: newPrevious && `?page=${newPrevious}`,
+        range,
+        results,
+        curPage
       }
     case types.ALL_PEOPLE_FAILURE:
       return {
