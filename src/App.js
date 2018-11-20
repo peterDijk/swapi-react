@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 
 import TopBar from './components/TopBar'
-
+import FilmsContainer from './components/FilmsContainer'
 
 class App extends Component {
   render() {
@@ -13,6 +13,10 @@ class App extends Component {
             <TopBar />
           </header>
           <main>
+            <Switch>
+              <Route path="/films" component={FilmsContainer} />
+              <Route exact path="/" render={() => <Redirect to="/films"/>} />
+            </Switch>
 
           </main>
         </div>

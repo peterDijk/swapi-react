@@ -1,0 +1,14 @@
+.item-box {
+  background-color: rgba($color-white, .8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: .3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
+  width: 20rem;
+  height: 30rem;
+  margin-bottom: 5rem;
+  margin-top: 0;
+  float: left;
+  transition: all .1s;
+}

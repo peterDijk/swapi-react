@@ -1,8 +1,28 @@
 .header {
   background-color: $color-dark-grey-1;
-  height: 10rem;
+  // height: 10rem;
+
+  h1 {
+    font-size: 3rem;
+  }
 
   &__logo-bar {
     text-align: center;
   }
+
+  &__nav {
+    display: flex;
+    height: 7rem;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    text-transform: uppercase;
+    color: $color-light-grey;
+
+    h3 {
+      font-size: 1.6rem;
+    }
+  }
+
 }

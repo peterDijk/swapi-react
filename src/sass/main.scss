@@ -2,6 +2,12 @@
 
 @import "base/base";
 @import "base/typography";
+@import "base/animations";
 
 @import "layout/header";
 @import "layout/main";
+
+@import "components/item-box";
+@import "components/loader";
+
+@import "pages/films";
