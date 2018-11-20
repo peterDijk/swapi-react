@@ -13,3 +13,9 @@ export function loadFilm(id) {
     payload: id
   }
 }
+
+export function clearFilm() {
+  return {
+    type: types.CLEAR_FILM
+  }
+}

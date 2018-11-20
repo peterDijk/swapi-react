@@ -20,6 +20,8 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         error: payload
       }
+    case types.CLEAR_FILM:
+      return initialState
     default:
       return state
   }
