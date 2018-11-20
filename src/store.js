@@ -6,7 +6,7 @@ import reducers from './reducers'
 const reducer = combineReducers(reducers)
 const sagaMiddleware = createSagaMiddleware()
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f
 
 const enhancer = compose(
 	applyMiddleware(sagaMiddleware),
