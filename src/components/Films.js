@@ -12,7 +12,7 @@ export default function Films(props) {
     <section className="section-films">
       {(films.results.length > 0) && 
         films.results.map(film => ( 
-          <div className="item-box">
+          <div key={film.episode_id} className="item-box">
             <h3>{film.title}</h3>
             <p>Release date: {film.release_date}</p>
             <p>Producer: {film.producer}</p>

@@ -9,6 +9,14 @@ const initialState = {
   error: null
 }
 
+const sortByReleaseDate = (results) => {
+  let sorted = [...results]
+  sorted.sort((a, b) => {
+    return a.release_date.localeCompare(b.release_date)
+  })
+  return sorted
+}
+
 export default (state = initialState, { type, payload }) => {
   switch(type) {
     case types.ALL_FILMS_REQUEST:
@@ -21,7 +29,7 @@ export default (state = initialState, { type, payload }) => {
         count,
         next,
         previous,
-        results
+        results: sortByReleaseDate(results)
       }
     case types.ALL_FILMS_FAILURE:
       return {
