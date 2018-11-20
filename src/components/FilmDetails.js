@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Loader from './Loader'
+import { Link } from 'react-router-dom'
 
 export default function FilmDetails(props) {
   
@@ -32,9 +33,12 @@ export default function FilmDetails(props) {
         <div className="film-info__related">
           <div className="film-info_related-characters">
             <h2>Characters in this film:</h2>
-            {characters.map(char => (
-              <p key={char.url}>{char.name}</p>
-            ))}
+            {characters.map(char => {
+              const personId = char.url.split("/").slice(-2)[0]
+              return (
+                <p key={char.url}><Link to={`/people/${personId}`}>{char.name}</Link></p>
+              )
+            })}
           </div>
         </div>
 
