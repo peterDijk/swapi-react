@@ -5,6 +5,7 @@ import * as types from '../actions/constants'
 
 export function* watcherPeople() {
   yield takeLatest(types.ALL_PEOPLE_REQUEST, loadPeopleSaga)
+  yield takeLatest(types.LOAD_FILM_CHARACTER_REQUEST, loadFilmCharSaga)
 }
 
 function fetchFromApi(url) {
@@ -23,5 +24,17 @@ function* loadPeopleSaga(action) {
     yield put({ type: types.ALL_PEOPLE_SUCCESS, payload: people })
   } catch (error) {
     yield put({ type: types.ALL_PEOPLE_FAILURE, payload: error })
+  }
+}
+
+function* loadFilmCharSaga(action) {
+  
+  try {
+    const response = yield call(fetchFromApi, action.payload)
+    const char = response.data
+    
+    yield put({ type: types.LOAD_FILM_CHARACTER_SUCCESS, payload: char })
+  } catch (error) {
+    yield put({ type: types.LOAD_FILM_CHARACTER_FAILURE })
   }
 }

@@ -8,8 +8,8 @@ export default function FilmDetails(props) {
       <Loader size="normal"/>
     </section>
   )
-  console.log(props)
-  const { film } = props
+  
+  const { film, characters } = props
   const episode = {
     1: 'I',
     2: 'II',
@@ -32,6 +32,9 @@ export default function FilmDetails(props) {
         <div className="film-info__related">
           <div className="film-info_related-characters">
             <h2>Characters in this film:</h2>
+            {characters.map(char => (
+              <p key={char.url}>{char.name}</p>
+            ))}
           </div>
         </div>
 
