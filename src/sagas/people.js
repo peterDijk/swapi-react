@@ -15,10 +15,10 @@ function fetchFromApi(url) {
 }
 
 function* loadPeopleSaga(action) {
+  
   try {
-    const response = yield call(fetchFromApi, 'https://swapi.co/api/people/')
+    const response = yield call(fetchFromApi, `https://swapi.co/api/people/?${action.payload}`)
     const people = response.data
-    console.log(people)
     
     yield put({ type: types.ALL_PEOPLE_SUCCESS, payload: people })
   } catch (error) {

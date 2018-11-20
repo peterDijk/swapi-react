@@ -1,7 +1,8 @@
 import * as types from './constants'
 
-export function loadPeople() {
+export function loadPeople(query) {
   return {
-    type: types.ALL_PEOPLE_REQUEST
+    type: types.ALL_PEOPLE_REQUEST,
+    payload: query
   }
 }

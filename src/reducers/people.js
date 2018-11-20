@@ -9,13 +9,13 @@ const initialState = {
   error: null
 }
 
-const sortByName = (results) => {
-  let sorted = [...results]
-  sorted.sort((a, b) => {
-    return a.name.localeCompare(b.name)
-  })
-  return sorted
-}
+// const sortByName = (results) => {
+//   let sorted = [...results]
+//   sorted.sort((a, b) => {
+//     return a.name.localeCompare(b.name)
+//   })
+//   return sorted
+// }
 
 export default (state = initialState, { type, payload }) => {
   switch(type) {
@@ -23,13 +23,14 @@ export default (state = initialState, { type, payload }) => {
       return { ...state, loading: true }
     case types.ALL_PEOPLE_SUCCESS:
       const { count, next, previous, results } = payload
+
       return { 
         ...state,
         loading: false,
         count,
-        next,
-        previous,
-        results: sortByName(results)
+        next: next && next.split("/").slice(-1)[0],
+        previous: previous && previous.split("/").slice(-1)[0],
+        results
       }
     case types.ALL_PEOPLE_FAILURE:
       return {
